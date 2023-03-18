@@ -1,9 +1,13 @@
 #include "Optimizer.h"
 
+// Fill with path to max-3sat test case files
+const PATH_TO_TEST_FILE_1 = ""
+const PATH_TO_TEST_FILE_2 = ""
+
 int main()
 {
 	Max3SatProblem problem1;
-	problem1.load("D:/Studia/Semestr3/TEP/max3sat/50/m3s_50_0.txt");
+	problem1.load(PATH_TO_TEST_FILE_1);
 	std::cout << "clauses number: " << problem1.getClausesNumber() << std::endl;
 	std::cout << "variables: " << problem1.getVariablesNumber() << std::endl;
 	Optimizer optimizer1(20, 0.5, 0.3, &problem1);
@@ -15,7 +19,7 @@ int main()
 	std::cout << std::endl;
 
 	Max3SatProblem problem2;
-	problem2.load("D:/Studia/Semestr3/TEP/max3sat/50/m3s_50_1.txt");
+	problem2.load(PATH_TO_TEST_FILE_2);
 	std::cout << "clauses number: " << problem2.getClausesNumber() << std::endl;
 	std::cout << "variables: " << problem2.getVariablesNumber() << std::endl;;
 	Optimizer optimizer2(100, 0.6, 0.2, &problem2);
